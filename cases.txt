@@ -1,0 +1,5 @@
+some_variable
+tryToConvertMe
+unchanged
+InvalidMethod
+bad_VarName
