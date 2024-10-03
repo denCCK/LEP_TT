@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Task4_Box {
 
+    static String fileName = "sheets.txt";
+
     public static boolean checkEdge(int[] edge1, int[] edge2) {
         int A1 = edge1[0], B1 = edge1[1];
         int A2 = edge2[0], B2 = edge2[1];
@@ -119,7 +121,6 @@ public class Task4_Box {
     }
 
     public static void main(String[] args) {
-        String fileName = "sheets.txt";
         List<int[][]> boxes = readBoxesFromFile(fileName);
         for (int[][] sheets : boxes) {
             printBox(sheets);

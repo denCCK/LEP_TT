@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class Task3_CaseConverter {
+
+    static String fileName = "cases.txt";
+
     public static String convertIdentifier(String identifier) {
         if (isSnakeCase(identifier)) {
             return snakeToCamel(identifier);
@@ -53,7 +56,6 @@ public class Task3_CaseConverter {
     }
 
     public static void main(String[] args) {
-        String fileName = "cases.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {

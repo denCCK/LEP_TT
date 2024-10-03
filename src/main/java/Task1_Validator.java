@@ -2,14 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public class Task1_Validator {
+
+    static Map<Character, Character> bracketPairs = Map.of(')', '(', ']', '[', '}', '{');
+    static Stack<Character> stack = new Stack<>();
+    static String fileName = "expressions.txt";
+
     public static boolean isValid(String expression) {
-        Stack<Character> stack = new Stack<>();
-
-        Map<Character, Character> bracketPairs = new HashMap<>();
-        bracketPairs.put(')', '(');
-        bracketPairs.put(']', '[');
-        bracketPairs.put('}', '{');
-
         for (char ch : expression.toCharArray()) {
             if (ch == '(' || ch == '[' || ch == '{') {
                 stack.push(ch);
@@ -20,12 +18,10 @@ public class Task1_Validator {
                 }
             }
         }
-
         return stack.isEmpty();
     }
 
     public static void main(String[] args) {
-        String fileName = "expressions.txt";
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {

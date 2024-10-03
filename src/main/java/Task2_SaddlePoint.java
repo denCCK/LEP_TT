@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Task2_SaddlePoint {
+    static String fileName = "matrices.txt";
     public static void findSaddlePoint(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
@@ -62,7 +63,7 @@ public class Task2_SaddlePoint {
                     }
                 } else {
                     List<Integer> row = new ArrayList<>();
-                    String[] parts = line.split("\\s+");
+                    String[] parts = line.split(" ");
                     for (String part : parts) {
                         row.add(Integer.parseInt(part));
                     }
@@ -94,10 +95,7 @@ public class Task2_SaddlePoint {
     }
 
     public static void main(String[] args) {
-        String fileName = "matrices.txt";
-
         List<int[][]> matrices = readMatricesFromFile(fileName);
-
         for (int i = 0; i < matrices.size(); i++) {
             System.out.println("Матрица " + (i + 1) + ":");
             findSaddlePoint(matrices.get(i));
